@@ -12,18 +12,11 @@ const App = () => (
       <Toaster />
       <BrowserRouter>
         <header className="bg-gray-800 text-white p-4">
-          <nav className="container mx-auto flex justify-between items-center">
+          <nav>
             <Link to="/" className="text-xl font-bold">Crypto Tracker</Link>
-            <ul className="flex space-x-4">
-              {navItems.map(({ title, to }) => (
-                <li key={to}>
-                  <Link to={to} className="hover:text-gray-300">{title}</Link>
-                </li>
-              ))}
-            </ul>
           </nav>
         </header>
-        <main className="container mx-auto mt-8">
+        <main>
           <Routes>
             {navItems.map(({ to, page }) => (
               <Route key={to} path={to} element={page} />
